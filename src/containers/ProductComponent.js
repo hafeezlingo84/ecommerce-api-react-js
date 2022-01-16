@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import {Link} from 'react-router-dom';
 
 const ProductComponent = () => {
     const products = useSelector((state) => state.allProducts.products);
@@ -18,6 +19,7 @@ const ProductComponent = () => {
                     <div className="header">{title}</div>
                     <div className="meta price">$ {price}</div>
                     <div className="meta">{category}</div>
+                    <button> <Link to={`/product/${id}`}>Add to Cart</Link></button>
                 </div>
             </div>
         </div>

@@ -3,7 +3,7 @@
 
 import React, { useState } from "react";
 import { Layout } from 'antd';
-import "./Astyle.css";
+import "../containers/Dashboard.css";
 import 'antd/dist/antd.min.css';
 
 const { Footer } = Layout;

@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import axios from 'axios';
 import { useDispatch, useSelector } from "react-redux";
 import { selectedProduct, removeSelectedProduct } from "../redux/actions/productActions";
+import Header from '../components/Header';
 
 const ProductDetail = () => {
     const product = useSelector((state) => state.product);
@@ -29,6 +30,11 @@ const ProductDetail = () => {
     }, [productId])
 
     return (
+        <div>
+             <Header/>
+             <br />
+             <br />
+             <br />
         <div className="ui grid container">
             {Object.keys(product).length === 0 ? (
                 <div>.....loading</div>
@@ -64,6 +70,7 @@ const ProductDetail = () => {
             )
 
             }
+        </div>
         </div>
     );
 };

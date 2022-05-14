@@ -1,15 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-import {Provider} from 'react-redux';
-import store from './redux/store'
+import React from "react";
+import  ReactDOM  from "react-dom";
+import './index.css';
+import { BrowserRouter as Router } from "react-router-dom";
+
+import App from './App'
+import { StateProvider } from "./context/StateProvider";
+import {initialState} from "./context/initialState";
+import reducer from "./context/reducer";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Provider store={store}>
-    <App />
-    </Provider>
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+<Router>
+    <StateProvider initialState={initialState} reducer={reducer}>
+    <App/>
+    </StateProvider>
 
+</Router>,
+
+ document.getElementById('root')
+ );

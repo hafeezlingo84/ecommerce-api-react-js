@@ -1,34 +1,20 @@
-
-import './App.css';
-import { BrowserRouter as Router, Routes, Route  } from 'react-router-dom';
-import Header from './components/Header';
-import ProductComponent from './containers/ProductComponent';
-import ProductDetail from './containers/ProductDetail';
-import ProductListing from './containers/ProductListing';
-import Dashboard from './containers/Dashboard';
-import AllProduct from './containers/AllProduct';
-import CreateProdut from './containers/CreateProduct';
-
-function App() {
-  return (
-
-    <div className="App">
-
-    <Router>
-      <Routes>
-
-  <Route path="/" element={<Dashboard />} />
-        <Route path="/all-product" element={<AllProduct />} />
-        <Route path="/create-product" element={<CreateProdut />} />
-        <Route path="/store" element={<ProductListing />} />
-        <Route  path="/product/:productId" element={<ProductDetail />} />
-        <Route path="/productComponent" element={<ProductComponent />} />
-      </Routes>
-    </Router>
+import React from "react";
+import { Route,Routes } from "react-router-dom";
+import {Header,MainContainer,CreateContainer} from "./components"
+import form from "bootstrap-4-react/lib/components/form";
+import { fromJSON } from "postcss";
 
 
-    </div>
-  );
+const App = () => {
+    return (
+        <div className="w-screen h-auto flex flex-col">
+            <Header />
+        <Routes>
+            <Route path="/" element={<MainContainer/>}/>
+            <Route path="/createItem" element={<CreateContainer/>}/>
+        </Routes>
+        </div>
+    )
 }
 
 export default App;
